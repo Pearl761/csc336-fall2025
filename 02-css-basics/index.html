@@ -6,13 +6,14 @@
   </head>
 
 
+
   <body>
     <!-- header -->
     <header>
-        <div>
-            <h1>Pearl's Country</h1>
-            <nav>
-                <a href="#title">Home</a>
+        <div class="navigation">
+            <h1 class="navleft">Pearl's Country</h1>
+            <nav class="navright">
+                <a href="#home">Home</a>
                 <a href="#intro">Introduction</a>
                 <a href="#duanju">about Duanju</a>
                 <a href="#labubu">about Labubu</a>
@@ -21,9 +22,11 @@
             </nav>
         </div>
     </header>
+    
 
     <!-- main body  -->
     <main>
+        <div id="home"></div>
         <!-- title -->
         <section id="title">
             <div>
@@ -34,118 +37,180 @@
 
 
         <!-- some ordinary and boring introductions -->
-        <section id="intro">
-            <h3>Introduction</h3>
-
-            <blockquote cite="https://en.wikipedia.org/wiki/Five_thousand_years_of_Chinese_civilization?utm_source=chatgpt.com" style="background:#f9f9f9; font-style:italic;">
-                China has a history of more than 5,000 years, filled with rich culture and heritage.
-                from the Great Wall and the Forbidden City to the Terracotta Army, countless landmarks tell the stories of its glorious past.
-            </blockquote>
-            <p>Hold on, hold on - you think I'm going to talk about those, right?</p>
-            <p>Nope, not this time!</p>
-            <p>Instead, let me show you what young people in China are really into today.</p>
-
+        <section id="intro" class="split" style="margin: 0 150px">
+                <h3 class="section-title" >Introduction</h3>
+                <div class="split-grid">
+                    <blockquote cite="https://en.wikipedia.org/wiki/Five_thousand_years_of_Chinese_civilization?utm_source=chatgpt.com">
+                        China has a history of more than 5,000 years, filled with rich culture and heritage.
+                        from the Great Wall and the Forbidden City to the Terracotta Army, countless landmarks tell the stories of its glorious past.
+                    </blockquote>
+                    <div>
+                        <p>Hold on, hold on - you think I'm going to talk about those, right?</p>
+                        <p>Nope, not this time!</p>
+                        <p>Instead, let me show you what young people in China are really into today.</p>
+                    </div>
+                </div>
         </section>
         
 
         <!-- Part 1 -->
-        <section id="duanju">
+        <section id="duanju" class="white-bg mainpart">
             <h3>Part 1 - Duanju (Short Dramas)</h3>
-            <h4>Introduction</h4>
-            <p>
-                Duanju is a type of popular Chinese micro-drama, designed specifically for vertical viewing on smartphones. 
-                Each episode is usually 1-3 minutes long and is available on platforms like TikTok, Rednote, and others
-            </p>
-            <h4>Key Features</h4>
-            <ul>
-                <li><strong>Fast-paced:</strong> Storylines move quickly to keep viewers hooked.</li>
-                <li><strong>Dramatic & addictive:</strong> Exaggerated plots, intense emotions, and satisfying "punchline" endings</li>
-                <li><strong>Global popularity:</strong> Duanju has gone beyond China, attracting millions of users worldwide and generating massive content consumption</li>
-            </ul>
+            <div class="cards two-col">
+                <div class="card">
+                    <h4>Introduction</h4>
+                    <p>
+                        Duanju is a type of popular Chinese micro-drama, designed specifically for vertical viewing on smartphones. 
+                        Each episode is usually 1-3 minutes long and is available on platforms like TikTok, Rednote, and others
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li><strong>Fast-paced:</strong> Storylines move quickly to keep viewers hooked.</li>
+                        <li><strong>Dramatic & addictive:</strong> Exaggerated plots, intense emotions, and satisfying "punchline" endings</li>
+                        <li><strong>Global popularity:</strong> Duanju has gone beyond China, attracting millions of users worldwide and generating massive content consumption</li>
+                    </ul>
+                </div>
+            </div>
+
             <h4>Photos</h4>
-            <img src="duanju1.jpg" width="550">
-            <br>
-            <p>Some similar Western Duanju <u>below</u> :</p>
-            <img src="duanju2.jpg" width="550">
-            <br>
-            <br>
-            <a href="https://www.wired.com/story/china-reel-short-dramas-video-social-media/?utm_source=chatgpt.com" target="_blank">
+            <div class="img-row">
+                <figure class="card">
+                    <img src="duanju1.jpg" alt="Duanju example 1">
+                    <figcaption class="caption">Sample Duanju shot</figcaption>
+                </figure>
+
+                <figure class="card">
+                    <img src="duanju2.jpg" alt="Duanju example 2">
+                    <figcaption class="caption">Western-style short drama</figcaption>
+                </figure>
+            </div>
+
+            <a class="btn-link" href="https://www.wired.com/story/china-reel-short-dramas-video-social-media/?utm_source=chatgpt.com" target="_blank">
                 see more info
             </a>
         </section>
         
 
         <!-- Part 2 -->
-        <section id="labubu">
+        <section id="labubu" class="gray-bg mainpart">
             <h3>Part 2 - Labubu X Blind Box Craze</h3>
-            <h4>Introduction</h4>
-            <p>Labubu is a quirky monster doll originally created by Hong Kong illustrator <strong>Kasing Lung</strong>. It was later launched by <strong>Pop Mart</strong>, 
-                and quickly became one of the most iconic blind box collectibles. 
-                Each Labubu figure features its signature toothy grin and comes in surprise packaging, making every purchase a mystery
-            </p>
-            <h4>Why It Became a Global Sensation</h4>
-            <ul>
-              <li><strong>The thrill of mystery:</strong> The blind box format gives buyers the excitement of surprise and rarity.</li>
-              <li><strong>Social media buzz:</strong> Platforms like TikTok and Instagram helped the trend explode worldwide.</li>
-              <li><strong>Celebrity influence:</strong> Stars like Blackpink's Lisa, Rihanna, and Dua Lipa shared their collections, fueling even more hype</li>
-              <li><strong>Record-breaking sales:</strong> In the first half of 2025, Labubu generated <strong>hundreds of millions of dollars</strong> in global sales</li>
-            </ul>
+            <div class="cards two-col">
+                <div class="card">
+                    <h4>Introduction</h4>
+                    <p>Labubu is a quirky monster doll originally created by Hong Kong illustrator <strong>Kasing Lung</strong>. It was later launched by <strong>Pop Mart</strong>, 
+                        and quickly became one of the most iconic blind box collectibles. 
+                        Each Labubu figure features its signature toothy grin and comes in surprise packaging, making every purchase a mystery
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h4>Why It Became a Global Sensation</h4>
+                    <ul>
+                        <li><strong>The thrill of mystery:</strong> The blind box format gives buyers the excitement of surprise and rarity.</li>
+                        <li><strong>Social media buzz:</strong> Platforms like TikTok and Instagram helped the trend explode worldwide.</li>
+                        <li><strong>Celebrity influence:</strong> Stars like Blackpink's Lisa, Rihanna, and Dua Lipa shared their collections, fueling even more hype</li>
+                        <li><strong>Record-breaking sales:</strong> In the first half of 2025, Labubu generated <strong>hundreds of millions of dollars</strong> in global sales</li>
+                    </ul>
+                </div>
+            </div>
+
             <h4>Photos</h4>
-            <img src="labubu1.jpg.webp" width="550">
-            <br>
-            <img src="labubu2.webp" width="550">
-            <br>
-            <img src="labubu3.jpg.webp" width="550">
-            <br>
-            <img src="labubu4.jpg.webp" width="550">
-            <br>
-            <br>
-            <a href="https://www.reuters.com/world/china/labubu-fans-dote-over-ugly-cute-doll-trending-comic-con-2025-07-28/?utm_source=chatgpt.com" target="_blank">
+
+            <div class="img-row">
+                <figure class="card">
+                    <img src="labubu1.jpg.webp" alt="labubu example 1">
+                    <figcaption class="caption">Different series of dolls of pop mart</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="labubu2.webp" alt="labubu example 2">
+                    <figcaption class="caption">People buy happily</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="labubu3.jpg.webp" alt="labubu example 3">
+                    <figcaption class="caption">Celebrities show off their Labubu</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="labubu4.jpg.webp" alt="labubu example 4">
+                    <figcaption class="caption">Internet celebrities are live-streaming the unboxing of Labubu</figcaption>
+                </figure>
+            </div>
+            <a class="btn-link" href="https://www.reuters.com/world/china/labubu-fans-dote-over-ugly-cute-doll-trending-comic-con-2025-07-28/?utm_source=chatgpt.com" target="_blank">
               see more info
             </a>
         </section>
 
         <!-- part 3 -->
-        <section id="baijiu">
+        <section id="baijiu" class="white-bg mainpart">
             <h3>Part 3 - Baijiu Modern Transformation</h3>
-            <h4>Introduction</h4>
-            <p>Baijiu is China's traditional strong liquor with a history spanning thousands of years. 
-                Known for its <strong>high alcohol content</strong>-often over 50%-it was once the <strong>centerpiece of banquets and formal toasts</strong>, 
-                symbolizing respect, hospitality, and celebration
-            </p>
-            <h4>Changing Drinking Habits</h4>
-            <p>Younger generations see traditional Baijiu as too strong and too old-fashioned.  
-              But this is rapidly changing as Baijiu brands experiment with new flavors and lower-alcohol versions to win over young consumers:
-            </p>
-            <ul>
-              <li><strong>Fruit-flavored Baijiu</strong></li>
-             <li><strong>Baijiu lattes</strong> combining coffee culture with tradition</li>
-             <li><strong>Baijiu-based cocktails</strong> served in trendy bars</li>
-             <li><strong>Baijiu ice cream</strong> blending dessert and alcohol for novelty appeal</li>
-            </ul>
+            <div class="cards two-col">
+                <div class="card">
+                    <h4>Introduction</h4>
+                    <p>Baijiu is China's traditional strong liquor with a history spanning thousands of years. 
+                        Known for its <strong>high alcohol content</strong>-often over 50%-it was once the <strong>centerpiece of banquets and formal toasts</strong>, 
+                        symbolizing respect, hospitality, and celebration
+                    </p>
+                </div>
+                <div class="card">
+                    <h4>Changing Drinking Habits</h4>
+                    <p>Younger generations see traditional Baijiu as too strong and too old-fashioned.  
+                        But this is rapidly changing as Baijiu brands experiment with new flavors and lower-alcohol versions to win over young consumers:
+                    </p>
+                    <ul>
+                        <li><strong>Fruit-flavored Baijiu</strong></li>
+                        <li><strong>Baijiu lattes</strong> combining coffee culture with tradition</li>
+                        <li><strong>Baijiu-based cocktails</strong> served in trendy bars</li>
+                        <li><strong>Baijiu ice cream</strong> blending dessert and alcohol for novelty appeal</li>
+                    </ul>
+
+                </div>
+            </div>
+            
+
+
             <h4>Photos</h4>
-            <img src="baijiu1.jpg" width="550">
-            <br>
+            <!-- <img src="baijiu1.jpg" width="550">
             <img src="baijiu2.jpg" width="550">
-            <br>
-            <img src="baijiu3.jpg.webp" width="550">
-            <br>
-            <br>
-            <a href="https://apnews.com/article/china-baijiu-liquor-drinking-young-a36493136c35cbe60c47d838b5e4c739" target="_blank">
+            <img src="baijiu3.jpg.webp" width="550"> -->
+            <div class="img-row">
+                 <figure class="card">
+                    <img src="baijiu1.jpg" alt="baijiu example 1">
+                    <figcaption class="caption">Coffee made with baijiu</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="baijiu2.jpg" alt="baijiu example 2">
+                    <figcaption class="caption">Beverages made with baijiu</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="baijiu3.jpg.webp" alt="baijiu example 3">
+                    <figcaption class="caption">Ice cream made with baijiu</figcaption>
+                </figure>
+            </div>
+
+            <a class="btn-link" href="https://apnews.com/article/china-baijiu-liquor-drinking-young-a36493136c35cbe60c47d838b5e4c739" target="_blank">
               see more info
             </a>
         </section>
 
         <section id="trend">
-            <a href="trends.html">
-                <h4>Let's find which you like best</h4>
+            <a class="btn-link" href="trends.html" >
+                Let's find which you like best
             </a>
         </section>
     </main>
 
     <!-- Footer  -->
     <footer>
-
+        <p class="footP">CSC336 - Web Programming - American University - Fall 2025</p>
+        <div class="navigation">
+            <p class="navleft">2025 Pearl Website </p>   
+            <div class="navright">
+                <a href="#home">Back to top</a>
+                <a href="https://github.com/pearl761" target="_blank">GitHub</a>
+            </div>
+        </div>
     </footer>
     
    

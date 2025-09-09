@@ -1,10 +1,17 @@
+/* 1 --- body --- */
+
+
 body{
     line-height: 1.5;
     font-family: Arial, sans-serif; 
     background-color: #f5f5f5;
     color: #333;
     margin: 0px;
+    font-size: 20px;
 }
+
+
+/* 2 --- header --- */
 
 header{
     background-color: white;
@@ -17,18 +24,7 @@ header{
 }
 
 header div{
-    display: flex;  
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000px;   
-    padding: 20px 0;
     background-color: white;
-    margin: 0 auto;
-}
-
-nav{
-    display: flex;
-    gap: 16px;  
 }
 
 h1 {
@@ -36,16 +32,49 @@ h1 {
     font-size: 30px;
 }
 
+
+/* 3 --- link ---  */
+
 a{
     text-decoration: none;
-    color: #333;
     white-space: nowrap;
+    color: #333;
 }
 
 a:hover{
     color: #3498db
 }
 
+
+/* 4 --- haeder and footer's navigation ---  */
+
+.navigation{
+    font-family: Tahoma, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.navright{
+    margin-right: 150px;
+    display: flex;
+    gap: 16px;  
+}
+
+.navleft{
+    margin-left: 150px;
+}
+
+
+/* 5 --- Just a empyty locater --- */
+
+#home{
+    height: 1;
+}
+
+
+/* 6 --- China Title ---- */
 #title{
     display: flex;  
     height: 200px;    
@@ -54,7 +83,8 @@ a:hover{
     text-align: center;   
     background: linear-gradient(to right, #ed9a4d, #c51d5a); 
     margin-top: 85px; 
-    padding: 40px 0; 
+    padding-bottom: 40px;
+    padding-top: 60px; 
 }
 
 #title div p{
@@ -67,6 +97,182 @@ h2{
     font-weight: bold;
     color: #ab3012;
     margin: 0;
-    margin-bottom: 20;
+    margin-bottom: 20px;
+}
+
+
+
+/* 7 --- Introdaction --- */
+
+.split{
+    /* align-items: center;  */
+    text-align: center;   
+}
+
+.split blockquote {
+  background: #fff;
+  font-style: italic;
+  padding: 16px 18px;
+  border-left: 5px solid #c51d5a;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  margin: 0;    
+  text-align: left;                  
+}
+
+.split-grid {
+  display: grid;                 
+  grid-template-columns: 1.2fr 1.8fr;
+  gap: 16px;                     
+}
+
+.split-grid p {
+  margin: 10px 0;
+  line-height: 1.7;
+}
+
+.section-title { 
+    font-size: 35px; 
+}
+
+@media (max-width: 800px) {
+  .split-grid { grid-template-columns: 1fr; } /* 窄屏只用一列 */
+}
+
+/* ---7 main part --- */
+
+.mainpart {
+  padding: 32px 150px;
+  margin: 32px auto;
+}
+
+@media (max-width: 900px) {
+  .mainpart { padding: 24px 24px; }
+}
+
+
+section.white-bg {
+  background: white;
+  border-radius: 10px;
+  
+}
+
+section.gray-bg {
+  background: #f5f5f5;
+  border-radius: 10px;
+  
+}
+
+section h3 {
+  font-size: 35px;
+  /* color: #007acc; */
+  margin-bottom: 1rem;
+}
+
+section h4 {
+  margin: 1rem 0 0.5rem;
+}
+
+/* --- Cards layout --- */
+
+.cards.two-col {
+  display: grid;                                   /* use Grid (meets assignment) */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (max-width: 800px) {
+  .cards.two-col { grid-template-columns: 1fr; }   /* stack on small screens */
+}
+
+.card {
+  background: #fff;                                 /* white card base */
+  border: 1px solid #e5e5e5;                      /* subtle border */
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* hover effect */
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+div.card {border-left: 5px solid #1d82c5;}
+.card p { line-height: 1.6; }
+.card ul { padding-left: 1.25rem; }
+
+/* --- photo --- */
+.img-row {
+  display: grid;                                    /* Grid for images too */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 12px 0 8px;
+}
+
+@media (max-width: 700px) {
+  .img-row { grid-template-columns: 1fr; }
+}
+
+.img-row img {
+  width: 100%;
+  height: auto;            /* keep natural aspect ratio */
+  display: block;
+  border-radius: 8px;
+}
+
+.caption {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 8px;
+}
+
+.btn-link {
+  display: line-block;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #007acc;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.btn-link:hover {
+  background: #005f99;
+  transform: translateY(-2px);
+}
+
+
+/* 8 --- trend --- */
+
+#trend {
+    margin-bottom: 30px;
+}
+
+#trend a {
+    margin-left: 10px;
+}
+
+
+
+
+/* 9 --- Footer --- */
+
+footer{
+    background-color: rgb(44, 62, 80);
+    color: aliceblue;
+
+}
+footer a{
+    color: aliceblue;
+}
+
+.footP{
+    font-family: Tahoma, Arial, sans-serif;
+    text-align: center; 
+    margin: 0;
+    padding-top: 10px;
 }
 
