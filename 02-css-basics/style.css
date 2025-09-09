@@ -70,7 +70,7 @@ a:hover{
 /* 5 --- Just a empyty locater --- */
 
 #home{
-    height: 1;
+    height: 1px;
 }
 
 
@@ -136,7 +136,7 @@ h2{
 }
 
 @media (max-width: 800px) {
-  .split-grid { grid-template-columns: 1fr; } /* 窄屏只用一列 */
+  .split-grid { grid-template-columns: 1fr; } 
 }
 
 /* ---7 main part --- */
@@ -176,23 +176,23 @@ section h4 {
 /* --- Cards layout --- */
 
 .cards.two-col {
-  display: grid;                                   /* use Grid (meets assignment) */
+  display: grid;                                   
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   margin-top: 16px;
 }
 
 @media (max-width: 800px) {
-  .cards.two-col { grid-template-columns: 1fr; }   /* stack on small screens */
+  .cards.two-col { grid-template-columns: 1fr; }   
 }
 
 .card {
-  background: #fff;                                 /* white card base */
-  border: 1px solid #e5e5e5;                      /* subtle border */
+  background: #fff;                                
+  border: 1px solid #e5e5e5;                     
   border-radius: 10px;
   padding: 16px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* hover effect */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; 
 }
 .card:hover {
   transform: translateY(-4px);
@@ -205,7 +205,7 @@ div.card {border-left: 5px solid #1d82c5;}
 
 /* --- photo --- */
 .img-row {
-  display: grid;                                    /* Grid for images too */
+  display: grid;                                    
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   margin: 12px 0 8px;
@@ -217,7 +217,7 @@ div.card {border-left: 5px solid #1d82c5;}
 
 .img-row img {
   width: 100%;
-  height: auto;            /* keep natural aspect ratio */
+  height: auto;            
   display: block;
   border-radius: 8px;
 }
@@ -229,7 +229,7 @@ div.card {border-left: 5px solid #1d82c5;}
 }
 
 .btn-link {
-  display: line-block;
+  display: inline-block;
   margin-top: 12px;
   padding: 10px 14px;
   border-radius: 8px;
