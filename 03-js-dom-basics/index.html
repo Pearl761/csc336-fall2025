@@ -1,0 +1,65 @@
+<html lang="en">
+    <head>
+        <title>My Diary</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <h1>My Diary</h1>
+
+        <!-- Preview Card   -->
+        <div id="preview-card" class="card">
+            <p id="preview-date" class="card-date hint-text">Select date</p>
+            <p id="preview-mood" class="card-mood hint-text">Choose your mood</p>
+            <p id="preview-content" class="card-content hint-text">Write something about your day.....</p>
+        </div>
+
+
+        <!-- input area -->
+
+
+        <div id="input-area">
+        <!-- input date -->
+            <div class="input-group">
+                <label for ="diary-date">Date:</label>
+                <input type="date" id="diary-date" name="diary-date">
+            </div>
+
+
+        <!-- mood button group -->
+            <div class="input-group">
+                <label for="mood-buttons">Mood:</label>
+                <div id="mood-buttons">
+                    <button onclick="selectMood('happy')">😊 Happy</button>
+                    <button onclick="selectMood('sad')">😢 Sad</button>
+                    <button onclick="selectMood('angry')">😠 Angry</button>
+                    <button onclick="selectMood('neutral')">😐 Neutral</button>
+                    <button onclick="selectMood('calm')">😌 Calm</button>
+                    <button onclick="selectMood('excited')">🎉 Excited</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- diary content -->
+        <div class="input-group">
+            <label for="diary-content">content:</label>
+            <textarea 
+                id="diary-content"
+                rows="3"
+                maxlength="100"
+                placeholder="Write your day(max 100 characters)"
+            ></textarea>
+        </div>
+
+        <!-- actions -->
+        <div class="actions">
+            <button id="save-btn" type="button" onclick="saveDiary()">💾 Save Diary</button>
+        </div>
+
+        <!-- saved list -->
+        <h2>Saved Diaries</h2>
+        <div id="saved-list"></div>
+
+    </body>
+</html>
