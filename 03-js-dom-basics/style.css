@@ -44,7 +44,6 @@ h1 {
 .hint-text {
     color: #999;
     font-style: italic;
-    margin: 0;
 }
 
 #preview-content {
@@ -201,8 +200,6 @@ textarea#diary-content {
   grid-template-columns: 1fr;
   gap: 12px;
 }
-/* .saved-card {  
-  position: relative;
-} */
+
 
 
