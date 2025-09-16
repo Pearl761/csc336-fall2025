@@ -17,9 +17,7 @@ const moodColorMap = {
   excited: "#fff8e6",
 };
 
-//diaries list
-let savedDiaries = [];
-
+//current mood
 let currentMood = null;
 
 // mood select
@@ -93,10 +91,6 @@ function saveDiary() {
         alert("Please write something.");
         return;
     }
-
-    // add save diaries
-    const entry = { date: dateVal, mood: currentMood, content: contentVal };
-    savedDiaries.push(entry);
 
     // Create card elements dynamically
     const card = document.createElement("div");

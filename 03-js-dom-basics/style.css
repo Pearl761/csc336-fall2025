@@ -30,10 +30,10 @@ h1 {
 }
 .card-date {
   font-weight: bold;
-  margin: 0 0 4px 0;
+  margin: 10px 0 20px 0;
 }
 .card-mood {
-  margin: 0 0 8px 0;
+  margin: 20px 0 10px 0;
   opacity: 0.9;
 }
 .card-content {
@@ -48,9 +48,12 @@ h1 {
 }
 
 #preview-content {
-    max-width: 500px;
+    max-width: 400px;
     margin: 0 auto;
+    text-align: left;
+    padding: 10px;
     white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
 
 
@@ -198,8 +201,8 @@ textarea#diary-content {
   grid-template-columns: 1fr;
   gap: 12px;
 }
-.saved-card {  
+/* .saved-card {  
   position: relative;
-}
+} */
 
 
