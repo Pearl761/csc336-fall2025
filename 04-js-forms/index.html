@@ -6,6 +6,42 @@
 
 </head>
 <body>
-    
+    <h1>Student Roster</h1>
+
+        <form id="student-form">
+            <label class="field">
+                <span>Name</span>
+                <input type="text" id="name" name="name" placeholder="e.g., Alice Chen" />
+            </label>
+
+            <label class="field">
+                <span>Birthdate</span>
+                <input type="date" id="birth" name="birth" />
+            </label>
+
+            <label class="field">
+                <span>Total GPA</span>
+                <input type="number" id="gpa" name="gpa" step="0.01" min="0" max="4" />
+            </label>
+
+            <label class="field">
+                <span>Major</span>
+                <select id="major" name="major">
+                    <option value="">Choose…</option>
+                    <option>Computer Science</option>
+                    <option>Data Science</option>
+                    <option>Economics</option>
+                    <option>Biology</option>
+                    <option>Business</option>
+                </select>
+            </label>
+
+            <label class="field">
+               <span>About (200 chars max)</span>
+               <textarea id="bio" name="bio" rows="3" maxlength="200" placeholder="One or two sentences about yourself"></textarea>
+            </label>
+
+            <button type="submit" class="btn">Add Student</button>
+        </form>
 </body>
 </html>
