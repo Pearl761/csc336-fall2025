@@ -6,7 +6,8 @@
 
 </head>
 <body>
-    <h1>Student Roster</h1>
+    <main class="container">
+        <h1>Student Roster</h1>
 
         <form id="student-form">
             <label class="field">
@@ -43,5 +44,13 @@
 
             <button type="submit" class="btn">Add Student</button>
         </form>
+
+        <div id="errors" role="alert" aria-live="polite"></div>
+
+        <h2>Students</h2>
+        <ul id="results" class="list"></ul>
+    </main>
+
+
 </body>
 </html>
