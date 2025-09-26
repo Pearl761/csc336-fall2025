@@ -16,12 +16,20 @@ const eveningDiscountPeriod = [
     21 * 60 + 30,
 ];
 
-let toast = Toastify({
+let toastTop = Toastify({
     text: "🧋 Welcome to U&TEA! Click the button below to see today's deal.",
-    duration: 3000,
+    duration: -1,
     close: true,
     gravity: "top", 
     position: "center",
+    style: {
+    background: "linear-gradient(135deg, #e09e48, #B68B6A)",
+    color: "#fff",
+    fontWeight: "bold",
+    borderRadius: "12px",
+    padding: "12px 18px",
+    boxShadow: "0 6px 16px rgba(0,0,0,0.25)"
+    }
 });
 
 
@@ -53,19 +61,21 @@ const dealbtn = document.querySelector("#dealbtn");
 // console.log(dealbtn);
 
 dealbtn.addEventListener("click", function(){
-    if (isInDiscountPeriod()){
-        // console.log("Clicked");
-    }
-    else{
-        let index = Math.floor(Math.random() * DiscountPool.length);
-        let randomDiscount = DiscountPool[index];
-        // console.log(rendomDiscount);
-    }
+    // if (isInDiscountPeriod()){
+    //     // console.log("Clicked");
+    // }
+    // else{
+    //     let index = Math.floor(Math.random() * DiscountPool.length);
+    //     let randomDiscount = DiscountPool[index];
+    //     // console.log(rendomDiscount);
+    // }
+    // toastTop.hindeToast();
+    toastTop.showToast();
 })
 
 
 
-toast.showToast();
+// toast.showToast();
 
 
 
