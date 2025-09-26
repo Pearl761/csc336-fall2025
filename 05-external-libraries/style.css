@@ -1,4 +1,89 @@
 body {
     background-image: url("./background.png"); 
-    background-size: 600px;                  
+    background-size: 400px;   
+    color: rgb(200, 110, 45);          
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #000000;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.block{
+    background-color: white;
+    border: 1px solid #E0C097;
+    padding: 20px 20px;
+    border-radius: 4px;
+}
+
+h1{
+    text-align: center;
+    font-size: 60px;
+    /* color: #1e92c7; */
+    font-weight: 50px;
+}
+
+h2{
+    /* color: #49c2d2; */
+    font-size: 30px;
+    font-weight: 30px;
+}
+
+p{
+    font-size: 15px;
+    font-weight: 20px;
+    color: #E0C097;
+}
+
+.grid-twoElements {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.grid-twoElements div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.grid-twoElements img{
+    margin: 0 auto;
+}
+
+#special{
+    text-align: center;
+    margin: 40px 0;
+}
+
+#dealbtn{
+    border-radius: 40px;
+    color: #e09e48;
+    border: 2px solid #e09e48;
+    background-color: white;
+    padding: 10px 20px;
+    font-family: Helvetica;
+    appearance: none;
+}
+
+#dealbtn:hover{
+    background-color: #E0C097;
+    border-color: #E0C097;
+    color: white;
+    cursor: pointer;
+}
+
+#dealbtn:active{
+    background-color: #B68B6A;
+    border-color: #B68B6A;
 }
