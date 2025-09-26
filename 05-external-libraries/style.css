@@ -66,7 +66,7 @@ p{
     margin: 40px 0;
 }
 
-#dealbtn{
+/* #dealbtn{
     border-radius: 40px;
     color: #e09e48;
     border: 2px solid #e09e48;
@@ -86,4 +86,48 @@ p{
 #dealbtn:active{
     background-color: #B68B6A;
     border-color: #B68B6A;
+} */
+
+.nonclicked{
+    border-radius: 40px;
+    color: #e09e48;
+    border: 2px solid #e09e48;
+    background-color: white;
+    padding: 10px 20px;
+    font-family: Helvetica;
+    appearance: none;
+}
+
+.nonclicked:hover{
+    background-color: #E0C097;
+    border-color: #E0C097;
+    color: white;
+    cursor: pointer;
+}
+
+.nonclicked:active{
+    background-color: #B68B6A;
+    border-color: #B68B6A;
+}
+
+.clicked{
+    border-radius: 40px;
+    color: white;
+    border: 2px solid #df840c;
+    background-color: #df840c;
+    padding: 10px 20px;
+    font-family: Helvetica;
+    appearance: none;
+}
+
+.clicked:hover{
+    background-color: #b97038;
+    border-color: #b97038;
+    color: white;
+    cursor: pointer;
+}
+
+.clicked:active{
+    background-color: #8a582d;
+    border-color: #8a582d;
 }

@@ -6,6 +6,9 @@ const DiscountPool = [
     "🥛 Oat Milk Upgrade: +$0.50 only today!"
 ];
 
+const LunchDiscount = "🕛 Lunch Special (11 AM - 2 PM): Free topping with any drink!"
+const DinnerDiscount = "🌙 Evening Special (6 PM - 9:30 PM): Buy 2 drinks, get 1 free!";
+
 const middayDiscountPeriod = [
     11 * 60,
     14 * 60,
@@ -17,7 +20,7 @@ const eveningDiscountPeriod = [
 ];
 
 let toastTop = Toastify({
-    text: "🧋 Welcome to U&TEA! Click the button below to see today's deal.",
+    text: "🧋 Welcome to U&TEA! The button has changed. Click it again to see what deals we've drawn ! ! !",
     duration: -1,
     close: true,
     gravity: "top", 
@@ -31,6 +34,8 @@ let toastTop = Toastify({
     boxShadow: "0 6px 16px rgba(0,0,0,0.25)"
     }
 });
+
+let clickBtnOnce = false;
 
 
 // const now = new Date();
@@ -61,16 +66,21 @@ const dealbtn = document.querySelector("#dealbtn");
 // console.log(dealbtn);
 
 dealbtn.addEventListener("click", function(){
-    // if (isInDiscountPeriod()){
-    //     // console.log("Clicked");
-    // }
-    // else{
-    //     let index = Math.floor(Math.random() * DiscountPool.length);
-    //     let randomDiscount = DiscountPool[index];
-    //     // console.log(rendomDiscount);
-    // }
-    // toastTop.hindeToast();
-    toastTop.showToast();
+    if (clickBtnOnce === false){
+        toastTop.showToast();
+        clickBtnOnce = true;
+        dealbtn.innerText = "Show Today's Deal";
+        dealbtn.className = "clicked";
+    }
+    else{
+        const now = new Date();
+        const h = now.getHours();
+        const m = now.getMinutes();
+        const minute = h * 60 + m;
+        if (isInDiscountPeriod()){
+
+        }
+    }
 })
 
 
