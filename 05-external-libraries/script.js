@@ -1,7 +1,9 @@
+// ---------------- Prize Configuration ----------------
+// Prize pool: Different tiers (0 = no prize, 1 = 1st prize, etc.) with weight (probability)
 const prizePool = [
     {
     tier: 0,
-    weight: 70,
+    weight: 70, // 70% chance of no prize
     options: [
       "🌈 No prize — but have a sweet day!",
       "🍵 No prize - but enjoy your tea! ✨",
@@ -10,7 +12,7 @@ const prizePool = [
   },
   {
     tier: 1,
-    weight: 2,
+    weight: 2, // 2% chance of 1st prize
     options: [
       "🎉 First Prize: FREE Large Drink!",
       "🏆 First Prize: FREE Medium Drink + topping!",
@@ -19,7 +21,7 @@ const prizePool = [
   },
   {
     tier: 2,
-    weight: 8,
+    weight: 8, // 8% chance of 2nd prize
     options: [
       "✨ Second Prize - $2 OFF any drink!",
       "🍀 Second Prize - Free size upgrade + topping!",
@@ -28,7 +30,7 @@ const prizePool = [
   },
   {
     tier: 3,
-    weight: 20,
+    weight: 20, // 20% chance of 3rd prize
     options: [
       "🥤 Third Prize - $1 OFF any drink",
       "😊 Third Prize - Free oat/almond milk upgrade",
@@ -38,6 +40,11 @@ const prizePool = [
   
 ];
 
+// Discount text for lunch/dinner periods
+const LunchDiscount = "🕛 Lunch Special (11 AM - 2 PM): Free topping with any drink!"
+const DinnerDiscount = "🌙 Evening Special (6 PM - 9:30 PM): Buy 2 drinks, get 1 free!";
+
+// Gradient colors for each prize tier (visual distinction)
 const prizeColors = {
     1: "linear-gradient(135deg, #f7971e, #ffd200)",   
     2: "linear-gradient(135deg, #ff9a9e, #fecfef)",   
@@ -47,9 +54,9 @@ const prizeColors = {
     dinner: "linear-gradient(135deg, #b24592, #f15f79)",
 }
 
-const LunchDiscount = "🕛 Lunch Special (11 AM - 2 PM): Free topping with any drink!"
-const DinnerDiscount = "🌙 Evening Special (6 PM - 9:30 PM): Buy 2 drinks, get 1 free!";
 
+
+// Discount time ranges (converted to minutes since midnight for easy comparison)
 const middayDiscountPeriod = [
     11 * 60,
     14 * 60,
@@ -60,14 +67,19 @@ const eveningDiscountPeriod = [
     21 * 60 + 30,
 ];
 
+
+// Text for remaining draw attempts
 const drawTimeTexts = [
     "Draw again (2 left)",
     "Draw again (1 left)",
     "No more draws."
 ]
 
+
+// ---------------- Global Variables ----------------
+// Welcome toast (shows on first button click)
 let toastTop = Toastify({
-    text: "🧋 Welcome to U&TEA! The button has changed. Click it again to see what deals we've drawn ! ! !",
+    text: "🧋 Welcome to U&TEA! The button has changed. Click it again! ! !",
     duration: 8000,
     close: true,
     gravity: "top", 
@@ -85,21 +97,11 @@ let toastTop = Toastify({
 let clickBtnOnce = false;
 let drawnTime = 0;
 
-
-// const now = new Date();
-
-// const h = now.getHours();
-// const m = now.getMinutes();
-
-// console.log(h);
-// console.log(m);
-// console.log(now);
-// const minute = h * 60 + m;
-
-// console.log(minute);
-
 let prizeText = null;
 
+
+// ---------------- Core Functions ----------------
+// Show toast notification with prize/discount content
 function showPrize(prize){
     
     const prizeColor = prizeColors[prize];
@@ -132,6 +134,8 @@ function showPrize(prize){
     priceToast.showToast();
 }
 
+
+//Check if current time is in a discount period
 function isInDiscountPeriod(minute){
     if (minute >= middayDiscountPeriod[0] && minute <= middayDiscountPeriod[1] ||
         minute >= eveningDiscountPeriod[0] && minute <= eveningDiscountPeriod[1]
@@ -141,6 +145,8 @@ function isInDiscountPeriod(minute){
     return false;
 }
 
+
+// Get current discount type (lunch/dinner) based on time
 function getCurrentDiscount(minute){
     if (minute >= middayDiscountPeriod[0] && minute <= middayDiscountPeriod[1]){
         return "lunch";
@@ -148,11 +154,10 @@ function getCurrentDiscount(minute){
     else if (minute >= eveningDiscountPeriod[0] && minute <= eveningDiscountPeriod[1]){
         return "dinner";
     }
-    // return "dinner";
 }
 
-// console.log(isInDiscountPeriod());
 
+// Randomly select a prize tier based on weight (probability)
 function getRandomPrize(){
     const total = prizePool[0].weight + prizePool[1].weight + prizePool[2].weight + prizePool[3].weight;
     const r = Math.random() * total;
@@ -161,86 +166,74 @@ function getRandomPrize(){
     const c = b + prizePool[3].weight;
     const d = total;
 
-    // console.log(total, r, a, b, c, d);
-
     if (0 <= r && r <= a){
-        // const options = prizePool[0].options;
-        // const idx = Math.floor(Math.random() * options.length);
-        // console.log(1, 'idx:', idx, options);
         return 1;
     }
     else if (a < r && r <= b){
-        // const options = prizePool[1].options;
-        // const idx = Math.floor(Math.random() * options.length);
-        // console.log(2, 'idx:', idx, options);
         return 2;
     }
     else if (b < r && r <= c){
-        // const options = prizePool[2].options;
-        // const idx = Math.floor(Math.random() * options.length);
-        // console.log(3, 'idx:', idx, options);
         return 3;
     }
     else if (c < r && r <= d){
-        // const options = prizePool[3].options;
-        // const idx = Math.floor(Math.random() * options.length);
-        // console.log(4, 'idx:', idx, options);
         return 0;
     }
 
     
 }
 
-// console.log(getRandomPrize());
 
 
+// ---------------- Button Interaction ----------------
 
 const dealbtn = document.querySelector("#dealbtn");
 const dealstate = document.querySelector("#special p");
 
-// console.log(dealbtn);
 
-
+// Button click event listener
 let now = null;
 let h = null;
 let m = null;
 let minute = null;
 dealbtn.addEventListener("click", function(){
+
+    // First click: Show welcome toast + update button/text
     if (clickBtnOnce === false){
-        now = new Date();
-        h = now.getHours();
-        m = now.getMinutes();
-        minute = h * 60 + m;
-        toastTop.showToast();
+        // Show welcome message
+        toastTop.showToast(); 
         clickBtnOnce = true;
         dealbtn.innerText = "get your prize ! !";
         dealbtn.className = "clicked";
         dealstate.innerText = "Click the button: If it's discount time, you'll get a fixed deal. Otherwise, draw for random discounts 3 times!";
         
     }
+    // Subsequent clicks: Handle prizes/discounts
     else{
+        const now = new Date();
+        const h = now.getHours();
+        const m = now.getMinutes();
+        const minute = h * 60 + m;// Convert current time to minutes
+
+        // Case 1: In discount period (show fixed discount)
         if (isInDiscountPeriod(minute)){
-            // console.log('yes', getCurrentDiscount(minute));
-            // console.log(getCurrentDiscount(minute));
             drawnTime = 3;
             showPrize(getCurrentDiscount(minute));
             dealbtn.innerText = "Deal applied 🎉";
             dealbtn.disabled = true;
-            // console.log(drawnTime);
         }
-        else{
-            if (drawnTime < 3){
-                drawnTime += 1;
-                dealbtn.innerText = drawTimeTexts[drawnTime - 1];
-                // console.log(getRandomPrize());
-                const prize = getRandomPrize();
-                showPrize(prize);
-                if (drawnTime === 3){
-                    dealbtn.innerText = "No more draws.";
-                    dealbtn.disabled = true;    
-                }
+        // Case 2: Not in discount period (allow 3 random draws)
+        else if (drawnTime < 3){
+            drawnTime += 1;
+            dealbtn.innerText = drawTimeTexts[drawnTime - 1];
+            const prize = getRandomPrize();
+            showPrize(prize);
+            // Disable button after 3rd draw
+            if (drawnTime === 3){
+                dealbtn.innerText = "No more draws.";
+                dealbtn.disabled = true;    
             }
         }
+    
     }
 })
 

@@ -1,6 +1,8 @@
 <html>
     <head>
         <title>Pearl's Milk Tea</title>
+
+        <!-- Link custom CSS file -->
         <link rel="stylesheet" href="./style.css">
 
         <!-- Toastify js -->
@@ -9,16 +11,21 @@
         <!-- my js -->
         <script src="./script.js" defer></script>
 
-        <!-- Toastify css (just for beautiful) -->
+        <!-- Import Toastify CSS via CDN (styles for notifications) -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.min.css">
     </head>
 
 
     <body>
+
     <main class="container">
+
+        <!-- Restaurant brand title -->
         <h1>U&TEA</h1>
 
+        <!-- Intro section: brand image + restaurant description (2-column grid) -->
         <div id="intro" class="grid-twoElements block" >
+            <!-- Brand logo/image -->
             <img src="uandtea.png" alt="Trademark">
 
             <div>
@@ -27,13 +34,19 @@
             </div>
         </div>
 
+        <!-- Today's Special section: prize/discount interaction -->
         <div id="special" class="block">
             <h2>Today's Special</h2>
+
+            <!-- Dynamic text (updated via JS) -->
             <p></p>
+
+            <!-- Interaction button -->
             <button id="dealbtn" class="nonclicked">Special</button>
         </div>
 
 
+        <!-- Info section: business hours + location (2-column grid) -->
         <div id="info" class="grid-twoElements block">
             <div>
                 <h2>Hours</h2>

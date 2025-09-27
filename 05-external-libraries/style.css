@@ -1,9 +1,12 @@
+/* ---------------- Base Styles ---------------- */
+/* Body: Background pattern + default text color */
 body {
     background-image: url("./background.png"); 
     background-size: 400px;   
     color: rgb(200, 110, 45);          
 }
 
+/* Brand image: Circular crop + border */
 img{
     width: 200px;
     height: 200px;
@@ -11,38 +14,23 @@ img{
     border: 5px solid #000000;
 }
 
+/* Container: Center content + limit max width */
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* ---------------- Layout Styles ---------------- */
+/* Block: White background for content sections (visual separation) */
 .block{
     background-color: white;
     border: 1px solid #E0C097;
-    padding: 11px 20px;
+    padding: 5px 20px;
     border-radius: 4px;
 }
 
-h1{
-    text-align: center;
-    font-size: 60px;
-    /* color: #1e92c7; */
-    font-weight: 50;
-}
-
-h2{
-    /* color: #49c2d2; */
-    font-size: 30px;
-    font-weight: 30;
-}
-
-p{
-    font-size: 15px;
-    font-weight: 20;
-    color: #e0b680;
-}
-
+/* 2-column grid: For intro and info sections */
 .grid-twoElements {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -61,33 +49,38 @@ p{
     margin: 0 auto;
 }
 
+/* Center text in "Today's Special" section */
 #special{
     text-align: center;
     margin: 40px 0;
 }
 
-/* #dealbtn{
-    border-radius: 40px;
-    color: #e09e48;
-    border: 2px solid #e09e48;
-    background-color: white;
-    padding: 10px 20px;
-    font-family: Helvetica;
-    appearance: none;
+
+/* ---------------- Text Styles ---------------- */
+/* Main title: Large + centered */
+h1{
+    text-align: center;
+    font-size: 60px;
+    font-weight: 50px;
 }
 
-#dealbtn:hover{
-    background-color: #E0C097;
-    border-color: #E0C097;
-    color: white;
-    cursor: pointer;
+/* Section titles: Medium size */
+h2{
+    font-size: 30px;
+    font-weight: 30px;
+    margin: 20px 0;
 }
 
-#dealbtn:active{
-    background-color: #B68B6A;
-    border-color: #B68B6A;
-} */
+/* Body text: Small size + custom color */
+p{
+    font-size: 15px;
+    font-weight: 20px;
+    color: #e0b680;
+}
 
+
+/* ---------------- Button Styles ---------------- */
+/* Button: Default state (before first click) */
 .nonclicked{
     border-radius: 40px;
     color: #e09e48;
@@ -96,6 +89,7 @@ p{
     padding: 10px 20px;
     font-family: Helvetica;
     appearance: none;
+    margin-bottom: 15px;
 }
 
 .nonclicked:hover{
@@ -110,6 +104,8 @@ p{
     border-color: #B68B6A;
 }
 
+
+/* Button: Active state (after first click) */
 .clicked{
     border-radius: 40px;
     color: white;
@@ -118,6 +114,7 @@ p{
     padding: 10px 20px;
     font-family: Helvetica;
     appearance: none;
+    margin-bottom: 15px;
 }
 
 .clicked:hover{
