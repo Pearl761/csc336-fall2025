@@ -1,4 +1,13 @@
 const prizePool = [
+    {
+    tier: 0,
+    weight: 70,
+    options: [
+      "🌈 No prize — but have a sweet day!",
+      "🍵 No prize - but enjoy your tea! ✨",
+      "🙂 No prize - Almost there! Better luck next sip!"
+    ]
+  },
   {
     tier: 1,
     weight: 2,
@@ -26,15 +35,7 @@ const prizePool = [
       "🧋 Third Prize - Free topping"
     ]
   },
-  {
-    tier: 0,
-    weight: 70,
-    options: [
-      "🌈 No prize — but have a sweet day!",
-      "🍵 No prize - but enjoy your tea! ✨",
-      "🙂 No prize - Almost there! Better luck next sip!"
-    ]
-  }
+  
 ];
 
 const prizeColors = {
@@ -67,7 +68,7 @@ const drawTimeTexts = [
 
 let toastTop = Toastify({
     text: "🧋 Welcome to U&TEA! The button has changed. Click it again to see what deals we've drawn ! ! !",
-    duration: 10000,
+    duration: 8000,
     close: true,
     gravity: "top", 
     position: "center",
@@ -97,10 +98,24 @@ let drawnTime = 0;
 
 // console.log(minute);
 
+let prizeText = null;
+
 function showPrize(prize){
+    
     const prizeColor = prizeColors[prize];
+    if (prize === 'lunch'){
+        prizeText = LunchDiscount;
+    }
+    else if (prize === 'dinner'){
+        prizeText = DinnerDiscount;
+    }
+    else{
+        const options = prizePool[prize].options;
+        const idx = Math.floor(Math.random() * options.length);
+        prizeText = options[idx];
+    }
     const priceToast = Toastify({
-        text: prize,
+        text: prizeText,
         duration: 5000,   
         close: true,
         gravity: "top",
@@ -133,6 +148,7 @@ function getCurrentDiscount(minute){
     else if (minute >= eveningDiscountPeriod[0] && minute <= eveningDiscountPeriod[1]){
         return "dinner";
     }
+    // return "dinner";
 }
 
 // console.log(isInDiscountPeriod());
@@ -140,36 +156,36 @@ function getCurrentDiscount(minute){
 function getRandomPrize(){
     const total = prizePool[0].weight + prizePool[1].weight + prizePool[2].weight + prizePool[3].weight;
     const r = Math.random() * total;
-    const a = prizePool[0].weight;
-    const b = a + prizePool[1].weight;
-    const c = b + prizePool[2].weight;
+    const a = prizePool[1].weight;
+    const b = a + prizePool[2].weight;
+    const c = b + prizePool[3].weight;
     const d = total;
 
     // console.log(total, r, a, b, c, d);
 
     if (0 <= r && r <= a){
-        const options = prizePool[0].options;
-        const idx = Math.floor(Math.random() * options.length);
+        // const options = prizePool[0].options;
+        // const idx = Math.floor(Math.random() * options.length);
         // console.log(1, 'idx:', idx, options);
-        return options[idx];
+        return 1;
     }
     else if (a < r && r <= b){
-        const options = prizePool[1].options;
-        const idx = Math.floor(Math.random() * options.length);
+        // const options = prizePool[1].options;
+        // const idx = Math.floor(Math.random() * options.length);
         // console.log(2, 'idx:', idx, options);
-        return options[idx];
+        return 2;
     }
     else if (b < r && r <= c){
-        const options = prizePool[2].options;
-        const idx = Math.floor(Math.random() * options.length);
+        // const options = prizePool[2].options;
+        // const idx = Math.floor(Math.random() * options.length);
         // console.log(3, 'idx:', idx, options);
-        return options[idx];
+        return 3;
     }
     else if (c < r && r <= d){
-        const options = prizePool[3].options;
-        const idx = Math.floor(Math.random() * options.length);
+        // const options = prizePool[3].options;
+        // const idx = Math.floor(Math.random() * options.length);
         // console.log(4, 'idx:', idx, options);
-        return options[idx];
+        return 0;
     }
 
     
@@ -184,23 +200,32 @@ const dealstate = document.querySelector("#special p");
 
 // console.log(dealbtn);
 
+
+let now = null;
+let h = null;
+let m = null;
+let minute = null;
 dealbtn.addEventListener("click", function(){
     if (clickBtnOnce === false){
+        now = new Date();
+        h = now.getHours();
+        m = now.getMinutes();
+        minute = h * 60 + m;
         toastTop.showToast();
         clickBtnOnce = true;
-        dealbtn.innerText = "Click again to draw ! ! (3 times)";
+        dealbtn.innerText = "get your prize ! !";
         dealbtn.className = "clicked";
-        dealstate.innerText = "Click the button: If it's discount time, you'll get a fixed deal. Otherwise, try your luck for a random discount!";
+        dealstate.innerText = "Click the button: If it's discount time, you'll get a fixed deal. Otherwise, draw for random discounts 3 times!";
+        
     }
     else{
-        const now = new Date();
-        const h = now.getHours();
-        const m = now.getMinutes();
-        const minute = h * 60 + m;
         if (isInDiscountPeriod(minute)){
+            // console.log('yes', getCurrentDiscount(minute));
             // console.log(getCurrentDiscount(minute));
             drawnTime = 3;
             showPrize(getCurrentDiscount(minute));
+            dealbtn.innerText = "Deal applied 🎉";
+            dealbtn.disabled = true;
             // console.log(drawnTime);
         }
         else{
@@ -210,12 +235,10 @@ dealbtn.addEventListener("click", function(){
                 // console.log(getRandomPrize());
                 const prize = getRandomPrize();
                 showPrize(prize);
-                
-            }
-            else{
-                dealbtn.innerText = "No more draws.";
-                // dealstate.innerText = "No more draws. Please come back later ! ! !";
-                // console.log("No more draws.");
+                if (drawnTime === 3){
+                    dealbtn.innerText = "No more draws.";
+                    dealbtn.disabled = true;    
+                }
             }
         }
     }
