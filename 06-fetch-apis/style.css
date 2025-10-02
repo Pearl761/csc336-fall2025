@@ -44,6 +44,11 @@ form{
     border: 2px solid #6a0dad; 
     border-radius: 12px;  
     resize: none;     
+
+    display: flex;                 
+    justify-content: center;     
+    align-items: center;          
+    text-align: center;
 }
 
 .question:focus {
@@ -55,4 +60,49 @@ form{
 .question::placeholder{
     font-style: italic;
     color: #aaa;     
+}
+
+.askBtn{
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: "Georgia", serif;
+    color: #f0f0f0;
+    background: #6a0dad;   
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(106, 13, 173, 0.6);
+    transition: all 0.3s ease;
+}
+
+.askBtn:hover{
+    background: #a64dff;         
+    box-shadow: 0 0 20px rgba(166, 77, 255, 0.8);
+}
+
+.answers {
+    margin-top: 30px;              
+    padding: 15px 20px;
+    max-width: 700px;
+    min-height: 300px;             
+    color: #f0f0f0;                
+    background: #1c1c1c;     
+    border: 2px solid #6a0dad; 
+    border-radius: 12px;
+    box-shadow: inset 0 0 15px rgba(106, 13, 173, 0.5);
+    font-family: "Georgia", serif;
+    font-size: 18px;
+    text-align: center;       
+    transition: all 0.3s ease;
+    margin: 0 auto;
+
+    display: flex;                 
+    justify-content: center;     
+    align-items: center;          
+    text-align: center;
+}
+
+.answers p {
+    font-style: italic;           
 }
