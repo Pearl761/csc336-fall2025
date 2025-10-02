@@ -1,0 +1,58 @@
+body{
+    background-image: url(./background.png);
+    background-size: 300px;   
+}
+
+h1{
+    font-family: 'Cinzel Decorative', 'Cormorant Garamond', serif;
+    color: #FFD700;
+    text-shadow: 0 0 8px #ffea70, 0 0 12px #ffb347;
+    text-align: center;
+    letter-spacing: 0.15em;
+    font-size: 40px;
+    font-weight: 850;
+}
+
+.title{
+    text-align: center;
+    letter-spacing: 0.12em;
+    margin: 0.25rem auto 2rem;
+    font-size: 25px;
+    color: #fff68f;
+    font-family: "Cormorant Garamond", serif;
+    opacity: 0.9;
+    text-shadow: 0 0 8px #ffea70, 0 0 12px #ffb347;
+    font-weight: bold; 
+}
+
+form{
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    flex-direction: column;
+}
+
+.question{
+    width: 100%;
+    max-width: 800px;     
+    height: 100px;
+    padding: 12px;
+    font-size: 16px;
+    font-family: "Georgia", serif; 
+    color: #f0f0f0;      
+    background: #1c1c1c; 
+    border: 2px solid #6a0dad; 
+    border-radius: 12px;  
+    resize: none;     
+}
+
+.question:focus {
+    outline: none; 
+    border-color: #a64dff; 
+    box-shadow: 0 0 15px rgba(166, 77, 255, 0.7); 
+}
+
+.question::placeholder{
+    font-style: italic;
+    color: #aaa;     
+}
