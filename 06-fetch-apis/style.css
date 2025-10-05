@@ -96,13 +96,24 @@ form{
     text-align: center;       
     transition: all 0.3s ease;
     margin: 0 auto;
-
-    display: flex;                 
-    justify-content: center;     
-    align-items: center;          
-    text-align: center;
 }
 
 .answers p {
     font-style: italic;           
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;  
+    align-items: center;      
+    text-align: center;       
+}
+
+.answers p {
+    width: 100%;
+    max-width: 600px;         
+    margin: 10px 0;           
+    font-style: italic;
+    color: #f0f0f0;
 }
