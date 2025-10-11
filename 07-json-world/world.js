@@ -9,5 +9,11 @@ try{
     console.log(error);
 }
 
-console.log(world);
+for (let i = 0; i < world.regions.length; i++){
+    for (let j = 0; j < world.regions[i].towns.length; j++){
+        // console.log(world.regions[i].towns[j].name, ":"); 
+        console.log(`${world.regions[i].towns[j].name}:`);
+        console.log(`population: ${world.regions[i].towns[j].population}`);
+    }
+}
 
