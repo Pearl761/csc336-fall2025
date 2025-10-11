@@ -34,8 +34,8 @@
                             "name": "Mara Sun",
                             "role": "herbalist",
                             "items": [
-                                {"name": "Moonleaf Tonic", "rarity": "legendary"},
-                                "satchel"
+                                "satchel",
+                                {"name": "Moonleaf Tonic", "rarity": "legendary"}
                             ]
                         }
                     ]
@@ -54,8 +54,8 @@
                             "name": "Jahir al-Rafi",
                             "role": "caravan leader",
                             "items": [
-                                {"name": "Compass of Zephyrs", "rarity": "epic"},
-                                "ledger"
+                                "ledger",
+                                {"name": "Compass of Zephyrs", "rarity": "epic"}
                             ]
                         },
                         {
