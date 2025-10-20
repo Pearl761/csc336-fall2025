@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "name": "North Valley ",
+      "climate": "temperate",
+      "towns": [
+        {
+          "name": "Riverhill",
+          "population": 1212,
+          "notable_people": [
+            {
+              "name": "Lina Chen",
+              "role": "blacksmith",
+              "items": [
+                "hammer",
+                {
+                  "name": "Iron Shield",
+                  "rarity": "rare"
+                }
+              ]
+            },
+            {
+              "name": "Owen Pike",
+              "role": "fisher",
+              "items": [
+                "net",
+                {
+                  "name": "Pearl Lure",
+                  "rarity": "uncommon"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Fernbrook",
+          "population": 1000,
+          "notable_people": [
+            {
+              "name": "Mara Sun",
+              "role": "herbalist",
+              "items": [
+                "satchel",
+                {
+                  "name": "Moonleaf Tonic",
+                  "rarity": "legendary"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dune Coast",
+      "climate": "arid",
+      "towns": [
+        {
+          "name": "Saltspire",
+          "population": 2100,
+          "notable_people": [
+            {
+              "name": "Jahir al-Rafi",
+              "role": "merchant",
+              "items": [
+                "ledger",
+                {
+                  "name": "Compass of Zephyrs",
+                  "rarity": "epic"
+                }
+              ]
+            },
+            {
+              "name": "Edda Noor",
+              "role": "glassblower",
+              "items": [
+                "blower pipe",
+                {
+                  "name": "Sandsong Vase",
+                  "rarity": "rare"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Mirra Wells",
+          "population": 530,
+          "notable_people": [
+            {
+              "name": "Tomas Reed",
+              "role": "well keeper",
+              "items": [
+                "bucket",
+                {
+                  "name": "Aqua Charm",
+                  "rarity": "uncommon"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
