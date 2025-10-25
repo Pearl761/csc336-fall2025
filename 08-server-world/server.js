@@ -8,8 +8,13 @@ app.use(express.static("./public"));
 app.use(express.json());
 
 app.get("/world", async (req, res) => {
-    const dataString = await fs.readFileSync("world.json", "utf-8");
-    const dataObject = JSON.parse(dataString);
+    try{
+        const dataString = await fs.readFileSync("world.json", "utf-8");
+        const dataObject = JSON.parse(dataString);
+    }catch(err){
+        console.error("Failed to read/parse world.json:", err);
+        res.status(500).json({ error: "Failed to load world data" });
+    }
     res.json(dataObject);
 });
 
